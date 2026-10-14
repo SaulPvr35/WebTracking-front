@@ -1,0 +1,237 @@
+/* ==========================================================================
+   ANIMACIONES Y MEDIA QUERIES RESPONSIVAS
+   ========================================================================== */
+
+/* ANIMACIONES */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulsoSuave {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+@keyframes girarSuave {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animar-rotar {
+  animation: girarSuave 0.8s linear infinite;
+}
+
+.vista-extractor, .vista-panel, .panel {
+  animation: fadeIn 0.25s ease-out;
+}
+
+.modal-fondo {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-tarjeta {
+  animation: fadeSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dot-salud {
+  animation: pulsoSuave 2.5s infinite ease-in-out;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES RESPONSIVAS
+   ========================================================================== */
+
+/* Tabletas y pantallas medianas (hasta 1024px) */
+@media (max-width: 1024px) {
+  .metricas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .preview-dinamica-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .preview-imagen-box {
+    width: 100%;
+    max-width: 100%;
+    height: 180px;
+    max-height: 180px;
+  }
+
+  .keepa-metricas-resumen {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Móviles y pantallas pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+  .navbar-contenedor {
+    padding: 10px 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .navbar-izquierda {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .navbar-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    border-top: 1px solid var(--borde-color);
+    padding-top: 8px;
+  }
+
+  .navbar-tab-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  .navbar-derecha {
+    width: 100%;
+    justify-content: space-between;
+    order: 2;
+  }
+
+  .hero-extractor {
+    margin: 10px 0 20px;
+  }
+
+  .hero-extractor h1 {
+    font-size: 1.6rem;
+  }
+
+  .fila-enlace {
+    flex-direction: column;
+  }
+
+  .fila-enlace .boton {
+    width: 100%;
+  }
+
+  .metricas {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .panel-pestanas-nav {
+    flex-direction: column;
+    border-bottom: none;
+    gap: 4px;
+  }
+
+  .pestana-btn {
+    border: 1px solid var(--borde-color);
+    border-radius: var(--borde-radio-md);
+    text-align: left;
+    padding: 10px 14px;
+  }
+
+  .pestana-btn.activa {
+    background: var(--color-primario-fondo);
+    border-color: var(--color-primario);
+    border-bottom: 1px solid var(--color-primario);
+  }
+
+  .filtros {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filtros label {
+    min-width: 100%;
+  }
+
+  .filtros .boton {
+    width: 100%;
+  }
+
+  .maxun-grid-campos {
+    grid-template-columns: 1fr;
+  }
+
+  .maxun-acciones {
+    flex-direction: column;
+  }
+
+  .promo-cuerpo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .detalle-modal-preview {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .detalle-modal-img-box {
+    width: 100%;
+    max-width: 100%;
+    height: 140px;
+    max-height: 140px;
+  }
+
+  .modal-tarjeta-grande {
+    max-height: 94vh;
+    padding: 16px !important;
+  }
+
+  .modal-tarjeta {
+    padding: 20px;
+  }
+
+  .paginacion {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .paginacion div {
+    display: flex;
+    gap: 8px;
+  }
+
+  .paginacion .boton {
+    flex: 1;
+    margin: 0 !important;
+  }
+}
+
+/* Pantallas ultra pequeñas (hasta 400px) */
+@media (max-width: 400px) {
+  .marca-logo span {
+    font-size: 1.05rem;
+  }
+
+  .usuario-nombre-nav {
+    display: none;
+  }
+
+  .indicador-salud .texto-salud {
+    display: none;
+  }
+}

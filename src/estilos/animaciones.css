@@ -1,0 +1,220 @@
+/* ==========================================================================
+   ANIMACIONES MODERNAS, MICROINTERACCIONES Y EFECTOS REACTIVOS
+   ========================================================================== */
+
+/* Keyframes principales */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(37, 99, 235, 0);
+  }
+}
+
+@keyframes shimmerEffect {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes spinnerRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floatSoft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Clases de animación reutilizables */
+.animar-entrada {
+  animation: fadeInSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animar-escala {
+  animation: fadeInScale 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animar-pulso {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.animar-rotar {
+  animation: spinnerRotate 0.85s linear infinite;
+}
+
+.animar-flotar {
+  animation: floatSoft 3s ease-in-out infinite;
+}
+
+/* Transiciones suaves en tarjetas, botones e inputs */
+.tarjeta-hover,
+.metrica-tarjeta-pro,
+.fila-producto-card,
+.preview-dinamica-card,
+.formulario-enlace,
+.vista-previa {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease;
+}
+
+.tarjeta-hover:hover,
+.metrica-tarjeta-pro:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -4px rgba(15, 23, 42, 0.08), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
+}
+
+.boton {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              border-color 0.2s ease;
+}
+
+.boton:hover:not(:disabled) {
+  transform: translateY(-1.5px);
+}
+
+.boton:active:not(:disabled) {
+  transform: translateY(0.5px) scale(0.99);
+}
+
+.pestana-btn,
+.navbar-tab-btn {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pestana-btn:hover,
+.navbar-tab-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Efecto esqueleto (Skeleton Shimmer) */
+.esqueleto-shimmer {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: shimmerEffect 1.5s infinite linear;
+  border-radius: 6px;
+}
+
+/* Loader moderno y refinado */
+.loader-extractor-contenedor {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 36px 24px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 18px;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  animation: fadeInSlideUp 0.35s ease both;
+}
+
+.loader-icono-anillo {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-spinner-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3.5px solid #eff6ff;
+  border-top-color: #2563eb;
+  border-right-color: #3b82f6;
+  animation: spinnerRotate 0.9s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+}
+
+.loader-icono-centro {
+  color: #2563eb;
+  animation: floatSoft 2s ease-in-out infinite;
+}
+
+.loader-textos {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 440px;
+}
+
+.loader-titulo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.loader-subtexto {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.loader-barra-progreso {
+  width: 240px;
+  height: 4px;
+  background: #f1f5f9;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 6px;
+  position: relative;
+}
+
+.loader-barra-relleno {
+  height: 100%;
+  width: 45%;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  border-radius: 999px;
+  position: absolute;
+  animation: shimmerEffect 1.4s ease-in-out infinite alternate;
+}
+
+/* Indicador de pulsación reactiva en estado de salud */
+.dot-salud {
+  box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.6);
+  animation: pulseGlow 2.5s infinite;
+}

@@ -1,0 +1,344 @@
+/* ==========================================================================
+   VARIABLES GLOBALES, RESET Y TIPOGRAFÍA BASE
+   ========================================================================== */
+:root {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+  --color-primario: #2563eb;
+  --color-primario-hover: #1d4ed8;
+  --color-primario-fondo: #eff6ff;
+  --borde-color: #e2e8f0;
+  --borde-radio-lg: 16px;
+  --borde-radio-md: 10px;
+  --borde-radio-sm: 6px;
+  --sombra-card: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+  --sombra-card-hover: 0 10px 25px -3px rgba(15, 23, 42, 0.08);
+}
+
+* { 
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  background: #f8fafc;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { 
+  color: var(--color-primario); 
+  overflow-wrap: anywhere; 
+  text-decoration: none; 
+}
+
+a:hover { 
+  text-decoration: underline; 
+}
+
+button, input, textarea, select { 
+  font: inherit; 
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 32px;
+}
+
+@media (min-width: 1600px) {
+  .contenedor {
+    max-width: 1640px;
+    padding: 32px 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contenedor {
+    padding: 16px;
+  }
+}
+
+.marca { 
+  color: var(--color-primario); 
+  font-weight: 700; 
+  letter-spacing: .04em; 
+}
+
+h1 { 
+  font-size: clamp(1.8rem, 3.5vw, 2.75rem); 
+  line-height: 1.15; 
+  margin: 12px 0 12px; 
+  font-weight: 800; 
+  letter-spacing: -0.02em; 
+}
+
+h2 { 
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem); 
+  margin: 6px 0 0; 
+  font-weight: 700; 
+  letter-spacing: -0.01em; 
+}
+
+.descripcion, .ayuda, .origen { 
+  color: #64748b; 
+  line-height: 1.5; 
+}
+
+.estado, .mensaje { 
+  border-radius: var(--borde-radio-md); 
+  padding: 14px 18px; 
+}
+
+.estado-pequeno { 
+  display: inline-block; 
+  margin: 12px 0 24px; 
+}
+
+.correcto { 
+  background: #dcfce7; 
+  color: #166534; 
+  border: 1px solid #bbf7d0; 
+}
+
+.pendiente { 
+  background: #fef3c7; 
+  color: #92400e; 
+  border: 1px solid #fde68a; 
+}
+
+.boton {
+  border: 0;
+  border-radius: var(--borde-radio-md);
+  cursor: pointer;
+  font-weight: 600;
+  padding: 11px 18px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.15s ease-in-out;
+}
+
+.boton:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.boton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.boton:disabled { 
+  cursor: wait; 
+  opacity: .7; 
+}
+
+.boton-chico {
+  padding: 6px 12px;
+  font-size: 0.82rem;
+}
+
+.principal { 
+  background: var(--color-primario); 
+  color: #fff; 
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2); 
+}
+
+.principal:hover:not(:disabled) { 
+  background: var(--color-primario-hover); 
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3); 
+}
+
+.secundario { 
+  background: #fff; 
+  border: 1px solid #cbd5e1; 
+  color: #334155; 
+}
+
+.secundario:hover:not(:disabled) { 
+  background: #f8fafc; 
+  border-color: #94a3b8; 
+  color: #0f172a; 
+}
+
+.enlace-boton { 
+  background: none; 
+  border: 0; 
+  color: var(--color-primario); 
+  cursor: pointer; 
+  font-weight: 600; 
+  padding: 0; 
+  transition: color 0.15s; 
+}
+
+.enlace-boton:hover { 
+  color: var(--color-primario-hover); 
+  text-decoration: underline; 
+}
+
+.enlace-peligro {
+  color: #dc2626 !important;
+}
+
+.enlace-peligro:hover {
+  text-decoration: underline;
+  color: #991b1b !important;
+}
+
+.boton-peligro {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.boton-peligro:hover {
+  background: #fecaca;
+  color: #991b1b;
+}
+
+.boton-icono-peligro {
+  background: none;
+  border: 1px solid transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.boton-icono-peligro:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.ayuda { 
+  font-size: .875rem; 
+  margin: 10px 0 0; 
+}
+
+.error-campo { 
+  color: #b91c1c; 
+  font-size: .875rem; 
+  margin: 8px 0 0; 
+}
+
+.informativo { 
+  background: #eff6ff; 
+  color: #1e40af; 
+  margin-top: 20px; 
+  border: 1px solid #bfdbfe; 
+}
+
+.error { 
+  background: #fef2f2; 
+  color: #991b1b; 
+  margin-top: 20px; 
+  border: 1px solid #fecaca; 
+}
+
+.error p { 
+  margin: 0; 
+}
+
+.encabezado-seccion { 
+  align-items: flex-start; 
+  display: flex; 
+  justify-content: space-between; 
+  gap: 16px; 
+  flex-wrap: wrap; 
+}
+
+.etiqueta-seccion { 
+  color: var(--color-primario); 
+  font-size: .8rem; 
+  font-weight: 700; 
+  margin: 0; 
+  text-transform: uppercase; 
+  letter-spacing: 0.05em; 
+}
+
+.insignia { 
+  background: #eef2ff; 
+  border-radius: 999px; 
+  color: #3730a3; 
+  font-size: .85rem; 
+  font-weight: 600; 
+  padding: 6px 12px; 
+  white-space: nowrap; 
+}
+
+.origen { 
+  border-bottom: 1px solid var(--borde-color); 
+  padding-bottom: 16px; 
+  margin: 12px 0 20px; 
+  font-size: 0.9rem; 
+}
+
+/* Modales globales */
+.modal-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  padding: 20px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.modal-tarjeta {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 440px;
+  padding: 28px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  z-index: 100000;
+  margin: auto;
+}
+
+.modal-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-encabezado h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #0f172a;
+}
+
+.modal-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modal-pie {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-top: 8px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 12px;
+}

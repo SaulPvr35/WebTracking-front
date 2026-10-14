@@ -1,0 +1,12 @@
+/* ==========================================================================
+   HOJA DE ESTILOS PRINCIPAL - IMPORTACIÓN MODULAR
+   ========================================================================== */
+@import "./estilos/base.css";
+@import "./estilos/navbar.css";
+@import "./estilos/productos.css";
+@import "./estilos/panel.css";
+@import "./estilos/keepaMaxun.css";
+@import "./estilos/responsivo.css";
+@import "./estilos/animaciones.css";
+@import "./estilos/inspectorTienda.css";
+

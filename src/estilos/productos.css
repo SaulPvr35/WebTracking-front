@@ -1,0 +1,291 @@
+/* ==========================================================================
+   ESTILOS DE EXTRACTOR, FORMULARIO DE ENLACE Y PREVIEW DE PRODUCTO
+   ========================================================================== */
+.formulario-enlace,
+.vista-previa {
+  background: #ffffff;
+  border: 1px solid var(--borde-color);
+  border-radius: var(--borde-radio-lg);
+  padding: 24px;
+  box-shadow: var(--sombra-card);
+}
+
+.formulario-enlace label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.fila-enlace {
+  display: flex;
+  gap: 12px;
+}
+
+input,
+textarea,
+select {
+  border: 1px solid #cbd5e1;
+  border-radius: var(--borde-radio-md);
+  color: #0f172a;
+  padding: 11px 14px;
+  width: 100%;
+  background: #ffffff;
+  transition: all 0.15s ease-in-out;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-primario);
+  outline: 3px solid #bfdbfe;
+  background: #ffffff;
+}
+
+.vista-previa {
+  margin-top: 24px;
+}
+
+.campos-producto {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.campo {
+  display: grid;
+  gap: 6px;
+}
+
+.campo>span {
+  font-size: .875rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.campo small {
+  color: #b45309;
+  font-weight: 500;
+  font-size: 0.75rem;
+  background: #fef3c7;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.campo em {
+  color: #94a3b8;
+  font-size: .8rem;
+  font-style: normal;
+}
+
+.campo.modificado input,
+.campo.modificado textarea {
+  background: #fffbeb;
+  border-color: #f59e0b;
+}
+
+.metadatos {
+  color: #64748b;
+  display: flex;
+  font-size: .85rem;
+  justify-content: space-between;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vista-previa .mensaje {
+  margin-top: 18px;
+}
+
+/* Banner de promociones y descuentos */
+.promo-banner-descuento {
+  background: linear-gradient(135deg, #fef2f2 0%, #fff1f2 100%);
+  border: 1px solid #fecdd3;
+  border-left: 5px solid #e11d48;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 16px 0 20px;
+}
+
+.promo-badge-tag {
+  display: inline-block;
+  background: #e11d48;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 6px rgba(225, 29, 72, 0.25);
+}
+
+.promo-cuerpo {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.promo-precios {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.promo-precio-actual {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.promo-precio-original {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.promo-ahorro {
+  font-size: 0.95rem;
+  color: #9f1239;
+  background: #ffe4e6;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.promo-etiqueta-texto {
+  color: #be123c;
+  font-size: 0.85rem;
+  margin: 6px 0 0;
+}
+
+.promo-vigencia {
+  color: #475569;
+  font-size: 0.85rem;
+  margin: 6px 0 0;
+}
+
+.promo-banner-normal {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 16px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.promo-sin-oferta {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+/* Tarjeta de previsualización dinámica limpia */
+.preview-dinamica-card {
+  display: flex;
+  gap: 20px;
+  background: #ffffff;
+  border: 1px solid var(--borde-color);
+  border-radius: var(--borde-radio-lg);
+  padding: 18px;
+  margin-bottom: 20px;
+  align-items: center;
+  box-shadow: var(--sombra-card);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.preview-dinamica-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: var(--sombra-card-hover);
+}
+
+.preview-imagen-box {
+  width: 120px;
+  height: 120px;
+  max-width: 120px;
+  max-height: 120px;
+  flex-shrink: 0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--borde-radio-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.preview-imagen-img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.preview-dinamica-card:hover .preview-imagen-img {
+  transform: scale(1.04);
+}
+
+.preview-imagen-placeholder {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.preview-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.preview-titulo-limpio {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.preview-ranking-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.estrellas-doradas {
+  color: #f59e0b;
+  display: inline-flex;
+  gap: 2px;
+}
+
+.puntuacion-texto {
+  color: #b45309;
+  font-weight: 700;
+  background: #fef3c7;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+.opiniones-texto {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.preview-descripcion-extracto {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.45;
+}
